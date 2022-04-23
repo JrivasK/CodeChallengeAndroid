@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_list_pokemon">
+
+    <fragment
+        android:id="@+id/navigation_list_pokemon"
+        android:name="com.example.codechallengeandroid.home.ui.listPokemon.ListPokemonFragment"
+        tools:layout="@layout/fragment_list_pokemon" >
+        <action
+            android:id="@+id/action_navigation_list_pokemon_to_navigation_detail"
+            app:launchSingleTop="true"
+            app:destination="@id/navigation_detail" >
+            <argument
+                android:name="name_pokemon"
+                app:argType="string"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.example.codechallengeandroid.home.ui.detailPokemon.DetailPokemonFragment"
+        tools:layout="@layout/fragment_detail_pokemon" >
+        <argument
+            android:name="name_pokemon"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_navigation_detail_to_navigation_abilities"
+            app:launchSingleTop="true"
+            app:destination="@id/navigation_abilities" >
+            <argument
+                android:name="name_pokemon"
+                app:argType="string"/>
+        </action>
+        <action
+            android:id="@+id/action_navigation_detail_to_navigation_evolutions"
+            app:launchSingleTop="true"
+            app:destination="@id/navigation_evolutions" >
+            <argument
+                android:name="name_pokemon"
+                app:argType="string"/>
+            <argument
+                android:name="url"
+                app:argType="string"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_abilities"
+        android:name="com.example.codechallengeandroid.home.ui.abilities.AbilitiesFragment"
+        tools:layout="@layout/fragment_abilities" >
+        <argument
+            android:name="name_pokemon"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_evolutions"
+        android:name="com.example.codechallengeandroid.home.ui.evolutions.EvolutionsFragment"
+        tools:layout="@layout/fragment_evolutions" >
+        <argument
+            android:name="name_pokemon"
+            app:argType="string"/>
+        <argument
+            android:name="url"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_navigation_evolutions_to_navigation_list_pokemon"
+            app:launchSingleTop="true"
+            app:destination="@id/navigation_list_pokemon" />
+    </fragment>
+</navigation>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Code Challenge Android</string>
+    <string name="title_activity_home">Poke Info</string>
+    <string name="evolution_line">Linea Evolutiva</string>
+    <string name="abilities">Habilidades</string>
+    <string name="base_happiness">Felicidad base: %d</string>
+    <string name="capture_rate">Tasa de captura: %d</string>
+    <string name="color">Color: %s</string>
+    <string name="eggs_group">Grupos de huevos: %s</string>
+</resources>
